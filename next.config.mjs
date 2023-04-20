@@ -1,3 +1,7 @@
+import i18nConfig from './next-i18next.config.js';
+
+const { i18n } = i18nConfig;
+
 // @ts-check
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
@@ -9,9 +13,6 @@
 const config = {
   reactStrictMode: true,
   swcMinify: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  i18n,
 };
 export default config;
