@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '../input/input';
 import { Select } from '../select/select';
-import calculateAccruedInterest from '../../utils/calculateAccruedInterest';
+import calculateCompoundInterest from '../../utils/calculate-compound-interest';
 
 const compoundOptions = [
   {
@@ -72,7 +72,7 @@ const schema = z.object({
   timeMonths: z.string().transform(stringToNumber),
 });
 
-export const CompoundCalculator: FC = () => {
+export const CompoundInterestCalculator: FC = () => {
   const [displayData, setDisplayData] = useState<{
     accrued: number | null;
     principal: number | null;
@@ -98,8 +98,7 @@ export const CompoundCalculator: FC = () => {
   });
 
   const onSubmit = handleSubmit((values) => {
-    console.log(values);
-    const amount = calculateAccruedInterest({
+    const amount = calculateCompoundInterest({
       principal: Number.parseFloat(values.principal),
       rate: Number.parseFloat(values.rate) / 100,
       compoundPeriods: Number.parseFloat(values.compoundPeriods),
