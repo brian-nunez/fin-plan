@@ -1,10 +1,10 @@
 import React from "react";
 import { createBoard } from "@wixc3/react-board";
-import { CompoundCalculator } from "../../../components/calculators/compound-interest";
+import { CompoundInterestCalculator } from "../../../components/calculators/compound-interest";
 
 export default createBoard({
   name: "CompoundInterest",
-  Board: () => <CompoundCalculator />,
+  Board: () => <CompoundInterestCalculator />,
   environmentProps: {
     windowWidth: 932,
     canvasWidth: 445,

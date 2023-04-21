@@ -5,7 +5,8 @@ import { useTranslation } from 'next-i18next';
 import nextI18NextConfig from '../../next-i18next.config';
 
 import seo from '../utils/seo';
-import { CompoundCalculator } from "../components/calculators/compound-interest";
+import { CompoundInterestCalculator } from "../components/calculators/compound-interest";
+import { PrincipalBasedOnAccrued } from "../components/calculators/principal-based-on-accrued";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -19,8 +20,9 @@ const Home: NextPage = () => {
         additionalMetaTags={seo.metaTags.home}
       />
       <main className="container mx-auto">
-        <div className="mx-auto mt-12 w-fit">
-          <CompoundCalculator />
+        <div className="mx-auto mt-12 grid grid-cols-3 gap-4">
+          <CompoundInterestCalculator />
+          <PrincipalBasedOnAccrued />
         </div>
       </main>
     </>
