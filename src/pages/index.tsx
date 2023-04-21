@@ -7,6 +7,7 @@ import nextI18NextConfig from '../../next-i18next.config';
 import seo from '../utils/seo';
 import { CompoundInterestCalculator } from "../components/calculators/compound-interest";
 import { PrincipalBasedOnAccrued } from "../components/calculators/principal-based-on-accrued";
+import { PrincipalBasedOnInterestAccrued } from "../components/calculators/principal-based-on-interest-accrued";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
         <div className="mx-auto mt-12 grid grid-cols-3 gap-4">
           <CompoundInterestCalculator />
           <PrincipalBasedOnAccrued />
+          <PrincipalBasedOnInterestAccrued />
         </div>
       </main>
     </>
