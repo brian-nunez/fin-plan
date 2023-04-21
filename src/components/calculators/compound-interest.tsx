@@ -6,7 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '../input/input';
 import { Select } from '../select/select';
 import calculateAccruedInterest from '../../utils/calculateAccruedInterest';
-import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 const compoundOptions = [
   {
@@ -73,7 +72,7 @@ const schema = z.object({
   timeMonths: z.string().transform(stringToNumber),
 });
 
-export const InterestCalculator: FC = () => {
+export const CompoundCalculator: FC = () => {
   const [displayData, setDisplayData] = useState<{
     accrued: number | null;
     principal: number | null;
@@ -81,7 +80,7 @@ export const InterestCalculator: FC = () => {
     accrued: null,
     principal: null,
   });
-  const [animateRef] = useAutoAnimate<HTMLDivElement>();
+
   const {
     register,
     handleSubmit,
@@ -178,7 +177,7 @@ export const InterestCalculator: FC = () => {
           Calculate
         </button>
       </form>
-      <div className="flex flex-col" ref={animateRef}>
+      <div className="flex flex-col">
         {typeof displayData.accrued === 'number' && typeof displayData.principal === 'number' && (
           <React.Fragment>
             <p className="text-2xl flex flex-col justify-center items-center">

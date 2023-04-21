@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import nextI18NextConfig from '../../next-i18next.config';
 
 import seo from '../utils/seo';
-import { InterestCalculator } from "../components/interest-calculator/interest-calculator";
+import { CompoundCalculator } from "../components/calculators/compound-interest";
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       />
       <main className="container mx-auto">
         <div className="mx-auto mt-12 w-fit">
-          <InterestCalculator />
+          <CompoundCalculator />
         </div>
       </main>
     </>
