@@ -3,8 +3,8 @@ import type { FC } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../input/input";
-import { Select } from "../select/select";
+import { Input } from '../form-fields/input';
+import { Select } from '../form-fields/select';
 import calculatePrincipalBasedOnInterestAccured from "../../utils/calculate-principal-based-on-interest-accrued";
 
 const compoundOptions = [
