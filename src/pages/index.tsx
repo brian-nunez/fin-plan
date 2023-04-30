@@ -1,7 +1,6 @@
 import { type NextPage } from "next";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { NextSeo } from "next-seo";
-import { useTranslation } from 'next-i18next';
 import nextI18NextConfig from '../../next-i18next.config';
 
 import seo from '../utils/seo';
@@ -11,8 +10,6 @@ import { PrincipalBasedOnInterestAccrued } from "../components/calculators/princ
 import { InterestRateBasedOnAccruedAndPrincipal } from "../components/calculators/interest-rate-based-on-accrued-and-principal";
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
-
   return (
     <>
       <NextSeo
@@ -22,7 +19,7 @@ const Home: NextPage = () => {
         additionalMetaTags={seo.metaTags.home}
       />
       <main className="container mx-auto">
-        <div className="mx-auto mt-12 grid grid-cols-3 gap-4">
+        <div className="mx-auto mt-12 grid grid-cols-1 gap-">
           <CompoundInterestCalculator />
           <PrincipalBasedOnAccrued />
           <PrincipalBasedOnInterestAccrued />

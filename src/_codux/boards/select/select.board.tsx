@@ -1,6 +1,6 @@
 import React from "react";
 import { createBoard } from "@wixc3/react-board";
-import { Select } from "../../../components/select/select";
+import { Select } from "../../../components/form-fields/select";
 
 export default createBoard({
   name: "Select",
